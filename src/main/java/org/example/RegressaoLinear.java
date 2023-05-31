@@ -23,7 +23,6 @@ public class RegressaoLinear {
         double somatorioX = 0d;
         double somatorioY = 0d;
         double somatorioXQuadrado = 0d;
-        double somatorioYQuadrado = 0d;
         double somatorioXmultiplicadoY = 0d;
         int dadosTamanho = this.listaDados.getTamanho();
 
@@ -33,7 +32,6 @@ public class RegressaoLinear {
             somatorioX += atual.getDado1();
             somatorioY += atual.getDado2();
             somatorioXQuadrado += Math.pow(atual.getDado1(),2);
-            somatorioYQuadrado += Math.pow(atual.getDado2(),2);
             somatorioXmultiplicadoY += atual.getDado1()* atual.getDado2();
 
             atual = atual.getNoProximo();
@@ -55,7 +53,7 @@ public class RegressaoLinear {
 
     }
 
-    public Double medidaCorrelacao(){
+    public HashMap<String, Double> medidaCorrelacao(){
         //Criando variaveis para facilitar o trabalho
         double somatorioX = 0d;
         double somatorioY = 0d;
@@ -82,8 +80,11 @@ public class RegressaoLinear {
 
 
         Double rxy = dividendoRxy/divisorRxy;
+        HashMap<String, Double> retorno = new HashMap<>();
+        retorno.put("rxy", rxy);
+        retorno.put("rˆ2", rxy * rxy);
 
-        return rxy*rxy;
+        return retorno;
     }
 
     public Double calculoEstimativa(Double valorEstimativa){
