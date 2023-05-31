@@ -35,7 +35,8 @@ public class ListaEncadeada {
     public void imprimeLista(){
         No no = this.cabeca;
         while (no != null){
-            System.out.println(no.getDado());
+            System.out.print("Dado1: "  + no.getDado1());
+            System.out.println(" | Dado2: "  + no.getDado1());
             no = no.getNoProximo();
         }
     }

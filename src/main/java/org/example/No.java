@@ -2,18 +2,22 @@ package org.example;
 
 public class No {
     private No noProximo;
-    private float dado;
+    private Double dado1;
+    private Double dado2;
 
     public No() {
     }
 
-    public No(float dado) {
-        this.dado = dado;
+    public No(Double dado1, Double dado2) {
+        this.dado1 = dado1;
+        this.dado2 = dado2;
+        this.noProximo = null;
     }
 
-    public No(No noProximo, float dado) {
+    public No(No noProximo, Double dado1, Double dado2) {
         this.noProximo = noProximo;
-        this.dado = dado;
+        this.dado1 = dado1;
+        this.dado2 = dado2;
     }
 
     public No getNoProximo() {
@@ -24,11 +28,19 @@ public class No {
         this.noProximo = noProximo;
     }
 
-    public float getDado() {
-        return dado;
+    public Double getDado1() {
+        return dado1;
     }
 
-    public void setDado(float dado) {
-        this.dado = dado;
+    public void setDado1(Double dado1) {
+        this.dado1 = dado1;
+    }
+
+    public Double getDado2() {
+        return dado2;
+    }
+
+    public void setDado2(Double dado2) {
+        this.dado2 = dado2;
     }
 }
